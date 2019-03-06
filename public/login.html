@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Ride-Reserved</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Frame works -->
+
+    <!-- ICONs -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+    <!--   profile page theme   -->
+    <!-- <link href="./profileTheme.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+
+    <!-- CSS Customization -->
+    <link href="./style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+    <!--  some sort of nav, here is a placehodler -->
+    <!-- <nav>
+        <div class="nav-wrapper container">
+            <a href="#!" class="brand-logo">Logo</a>
+              the data-target is what calls the sidenav to collapse 
+            <a href="#" data-target="navCollapse" class="sidenav-trigger"><i class="material-icons">|||</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="navCollapse">
+        <li><a href="index.html">HOME</a></li>
+    </ul>
+    </nav> -->
+    <!--  END some sort of nav, here is a placehodler -->
+
+    <!--  Some sort of body, here is a placehodler -->
+    <div class="container" id="mainContainer" style="display: block;">
+            <div class="row"><br><br></div>
+            <div class="row">
+                <h1>Welcome to Ride-Reserved</h1>
+                <h2>Login to get started</h2>
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>
+            </div>
+        </div>
+    <!--  END some sort of body, here is a placehodler -->
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-messaging.js"></script>
+
+    <!-- Including the FirebaseUI  -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./init.js"></script>
+
+    <!-- The js for this page  -->
+    <script src="./login.js"></script>
+ 
+
+</body>
+
+</html>

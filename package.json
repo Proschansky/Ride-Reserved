@@ -8,7 +8,9 @@
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
-  "keywords": ["Limo, Rideshare"],
+  "keywords": [
+    "Limo, Rideshare"
+  ],
   "author": "Sam Proschansky, Justin Thomas, Shain Dholakiya",
   "license": "ISC",
   "dependencies": {
