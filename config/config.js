@@ -1,8 +1,9 @@
-{
+require('dotenv').config();
+module.exportsn = {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "ridereserved",
+    "username": process.env.username,
+    "password": process.env.password,
+    "database": process.env.database,
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
