@@ -1,4 +1,4 @@
-// firebase setup and config
+// Firebase setup and config
 var config = {
     apiKey: "AIzaSyA6rmQdtJ_Lva9p33C2cANvJtitkJtv1wU",
     authDomain: "ride-reserved.firebaseapp.com",
@@ -14,7 +14,7 @@ var database = firebase.database();
 
 
 // Firebase pre-built UI
-// Initialize the FirebaseUI Widget using Firebase.
+// Initialize the FirebaseUI Widget using Firebase (from docs)
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
     callbacks: {
@@ -22,31 +22,35 @@ var uiConfig = {
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
 
-            var userSnap = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+            // Get a user's profile (from docs)
+            var user = firebase.auth().currentUser;
+
+            var userSnap = firebase.database().ref('users/' + user.uid);
             userSnap.update({
-                username: firebase.auth().currentUser.displayName,
-                email: firebase.auth().currentUser.email,
-                profilePicture: firebase.auth().currentUser.photoURL
+                username: user.displayName,
+                email: user.email,
+                profilePicture: user.photoURL
             });
             return true;
         },
         uiShown: function () {
-            // Hide the log.
+            // The widget is rendered.
+            // Hide the loader.
             document.getElementById('loader').style.display = 'none';
         }
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: "profile.html",
+    signInSuccessUrl: "<url-to-redirect-to-on-success>",
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
     // Terms of service url.
-    tosUrl: 'index.html',
+    tosUrl: '<your-tos-url>',
     // Privacy policy url.
-    privacyPolicyUrl: 'index.html'
+    privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
 
