@@ -28,6 +28,19 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,1000]
         }
       },
-    });
+      requestedStartDate: {
+        type: DataTypes.INTEGER,
+      },
+      requestedEndDate: {
+        type: DataTypes.INTEGER,
+      },
+      requestedDateRange: {
+        type: DataTypes.RANGE,
+        range: {
+          inclusive: [true,true]
+      }
+
+    }
+  });
     return riders;
   };
