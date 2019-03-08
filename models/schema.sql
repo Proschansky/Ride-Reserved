@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS RideReserved;
+CREATE DATABASE RideReserved;
+
+
