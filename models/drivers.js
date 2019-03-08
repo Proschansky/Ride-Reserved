@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = function(sequelize, DataTypes) {
     var drivers = sequelize.define("Drivers", {
       name: {
@@ -28,6 +30,19 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,1000]
         }
       },
-    });
+      availableStartDate: {
+        type: DataTypes.INTEGER,
+      },
+      availableEndDate: {
+        type: DataTypes.INTEGER,
+      },
+      availableDateRange: {
+        type: DataTypes.RANGE,
+        range: {
+          inclusive: [true,true]
+      }
+
+    }
+  });
     return drivers;
    };
