@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var riders = sequelize.define("Riders", {
+    var Riders = sequelize.define("Riders", {
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't

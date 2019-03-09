@@ -1,7 +1,7 @@
 var moment = require('moment');
 
 module.exports = function(sequelize, DataTypes) {
-    var drivers = sequelize.define("Drivers", {
+    var Drivers = sequelize.define("Drivers", {
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
