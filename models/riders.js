@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = function(sequelize, DataTypes) {
     var Riders = sequelize.define("Riders", {
       name: {
@@ -29,10 +31,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       requestedStartDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       requestedEndDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       requestedDateRange: {
         type: DataTypes.RANGE,
@@ -42,5 +44,9 @@ module.exports = function(sequelize, DataTypes) {
 
     }
   });
-    return riders;
+
+  for (i = 0;i<dummyDrivers.length;i++){
+    Riders.
+  }
+    return Riders;
   };
