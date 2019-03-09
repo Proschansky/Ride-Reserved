@@ -45,8 +45,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  for (i = 0;i<dummyDrivers.length;i++){
-    Riders.
-  }
     return Riders;
   };
