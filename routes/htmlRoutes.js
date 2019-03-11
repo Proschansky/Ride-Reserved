@@ -3,12 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+
   });
 
   // Load example page and pass in an example by id
@@ -25,3 +20,17 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+var db = require("../models");
+
+module.exports = function(app){
+  app.get("/test", function(req, res){
+    db.Drivers.findAll({
+      where: {
+        languages: "french"
+      }
+    }).then(function(dbData){
+      console.log(dbData)
+      res.render("index", {dbData})
+    })
+  })
+}
