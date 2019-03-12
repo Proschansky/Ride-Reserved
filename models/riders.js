@@ -1,5 +1,7 @@
+const moment = require('moment');
+
 module.exports = function(sequelize, DataTypes) {
-    var riders = sequelize.define("Riders", {
+    var Riders = sequelize.define("Riders", {
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
@@ -28,6 +30,13 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,1000]
         }
       },
-    });
-    return riders;
+      requestedStartDate: {
+        type: DataTypes.STRING,
+      },
+      requestedEndDate: {
+        type: DataTypes.STRING,
+      }
+  });
+
+    return Riders;
   };
