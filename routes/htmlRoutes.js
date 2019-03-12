@@ -1,6 +1,7 @@
 var db = require("../models");
 var path = require('path');
 var drivers = require('../models/drivers');
+const mysql = require("mysql");
 
 module.exports = function(app) {
   // Load index page
@@ -35,6 +36,14 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "RideReserved",
+  password : ''
+});
+
 
 console.log(db.Drivers);
 
