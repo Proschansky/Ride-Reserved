@@ -1,7 +1,12 @@
-var moment = require('moment');
+// const Moment = require('moment');
+// const MomentRange = require('moment-range')
+// var dummyDrivers = require('./dummyDrivers.js');
+// var start = new Date();
+// var end   = new Date();
+// const moment = MomentRange.extendMoment(Moment);
 
 module.exports = function(sequelize, DataTypes) {
-    var drivers = sequelize.define("Drivers", {
+    var Drivers = sequelize.define("Drivers", {
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
@@ -31,18 +36,14 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       availableStartDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       availableEndDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
-      availableDateRange: {
-        type: DataTypes.RANGE,
-        range: {
-          inclusive: [true,true]
-      }
-
-    }
+      
   });
-    return drivers;
-   };
+  return Drivers;
+};
+ 
+    
