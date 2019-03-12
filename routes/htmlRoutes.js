@@ -1,4 +1,7 @@
 var db = require("../models");
+var path = require('path');
+var drivers = require('../models/drivers');
+const mysql = require("mysql");
 
 module.exports = function(app) {
   // Load index page
@@ -10,6 +13,14 @@ module.exports = function(app) {
       });
     });
   });
+
+  app.get("/profile/profile", function(req, res) {
+      res.sendFile(path.join(__dirname, "../profile/profile.html"));
+  });
+
+  app.get("/profile/main", function(req, res) {
+    res.sendFile(path.join(__dirname, "../profile/mainProfile.html"));
+});
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
@@ -25,3 +36,15 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "RideReserved",
+  password : ''
+});
+
+
+console.log(db.Drivers);
+
+
