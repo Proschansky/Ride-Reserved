@@ -5,12 +5,15 @@ const mysql = require("mysql");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/test", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+
+  app.get("/test", function(req, res){
+    db.Drivers.findAll({
+      where: {
+        languages: "french"
+      }
+    }).then(function(dbData){
+      console.log(dbData)
+      res.render("index", {dbData})
     });
   });
 
