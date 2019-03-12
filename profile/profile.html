@@ -43,12 +43,14 @@
     </div>
   </nav>
 
+  <form>
+
   <div style="height:5px;"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <label for="firstName">Full name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Jane Doe" value="" required=""
+        <input type="text" name="fullName" class="form-control fullName" placeholder="Jane Doe" value="" required=""
           aria-required="true">
         <div class="invalid-feedback">
           Valid first name is required.
@@ -57,7 +59,7 @@
 
       <div class="col-md-6">
         <label for="url-input">Image URL</label>
-        <input class="form-control" type="url" value="" id="url-input" required="" aria-required="true">
+        <input name="imageURL" class="form-control imageURL" type="url" value="" id="url-input" required="" aria-required="true">
       </div>
     </div>
 
@@ -65,7 +67,7 @@
     <div class="row">
       <div class="col-md-6">
         <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required=""
+        <input type="text" name="address" class="form-control address" placeholder="1234 Main St" required=""
           aria-required="true">
         <div class="invalid-feedback">
           Please enter your address.
@@ -74,7 +76,7 @@
 
       <div class="col-md-6">
         <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+        <input type="text" name="address" class="form-control address2" id="address2" placeholder="Apartment or suite">
       </div>
     </div>
 
@@ -82,7 +84,7 @@
     <div class="row">
       <div class="col-md-3">
         <label for="state" class="active">State</label>
-        <select id="state" class="form-control" required="" aria-required="true" title="Please select a state">
+        <select id="state" name="state" class="form-control state" required="" aria-required="true" title="Please select a state">
           <option value="" selected>Select a state</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -143,7 +145,7 @@
 
       <div class="col-md-3">
         <label for="city">City/Town</label>
-        <input type="text" class="form-control" id="city" placeholder="" required="" aria-required="true">
+        <input type="text" name="city" class="form-control city" id="city" placeholder="" required="" aria-required="true">
         <div class="invalid-feedback">
           City/Town required.
         </div>
@@ -151,7 +153,7 @@
 
       <div class="col-sm-2">
         <label for="zip">Zip Code</label>
-        <input type="text" class="form-control" id="zip" placeholder="" required="" aria-required="true">
+        <input type="text" name="zip" class="form-control zip" id="zip" placeholder="" required="" aria-required="true">
         <div class="invalid-feedback">
           Zip code required.
         </div>
@@ -164,7 +166,7 @@
       <div class="col-md-3">
         <div class="form-group">
           <label for="exampleFormControlSelect2">Select Your Interests</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2" required="" aria-required="true">
+          <select multiple class="form-control interests" name="interests" id="exampleFormControlSelect2" required="" aria-required="true">
             <option>Technology</option>
             <option>Sports</option>
             <option>Cars</option>
@@ -178,7 +180,7 @@
       <div class="col-md-3">
         <div class="form-group">
           <label for="exampleFormControlSelect2">Select Your Languages</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2" required="" aria-required="true">
+          <select multiple class="form-control languages" name=languages id="exampleFormControlSelect2" required="" aria-required="true">
             <option value="Afrikanns">Afrikanns</option>
             <option value="Albanian">Albanian</option>
             <option value="Arabic">Arabic</option>
@@ -258,7 +260,7 @@
 
     <div class="form-group">
       <label for="aboutMe">About Me:</label>
-      <textarea class="form-control" rows="4" id="comment"></textarea>
+      <textarea class="form-control aboutMe" name="aboutMe" rows="4" id="comment"></textarea>
     </div>
   </div>
 

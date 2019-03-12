@@ -1,5 +1,6 @@
 var db = require("../models");
 var path = require('path');
+var drivers = require('../models/drivers');
 
 module.exports = function(app) {
   // Load index page
@@ -34,3 +35,7 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+
+console.log(db.Drivers);
+
+
