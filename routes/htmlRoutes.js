@@ -16,6 +16,10 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "../profile/profile.html"));
   });
 
+  app.get("/profile/main", function(req, res) {
+    res.sendFile(path.join(__dirname, "../profile/mainProfile.html"));
+});
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
