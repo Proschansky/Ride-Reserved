@@ -13,6 +13,11 @@ app.use(express.static('login'));
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {
