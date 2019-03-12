@@ -1,12 +1,9 @@
-module.exports = function(sequelize, DataTypes) {
-    var riders = sequelize.define("Riders", {
-<<<<<<< HEAD
-      name: DataTypes.STRING,
-      requireNDA: DataTypes.BOOLEAN,
-      preferredLanguage: DataTypes.STRING
+const moment = require('moment');
 
-    });
-=======
+module.exports = function(sequelize, DataTypes) {
+
+    var Riders = sequelize.define("Riders", {
+
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
@@ -36,10 +33,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       requestedStartDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       requestedEndDate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       requestedDateRange: {
         type: DataTypes.RANGE,
@@ -49,6 +46,7 @@ module.exports = function(sequelize, DataTypes) {
 
     }
   });
->>>>>>> 914c4477fd2f4b0d41b5d43e4897500e3cf6a5de
-    return riders;
+
+    return Riders;
+
   };
