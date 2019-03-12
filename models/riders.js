@@ -37,14 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       requestedEndDate: {
         type: DataTypes.STRING,
-      },
-      requestedDateRange: {
-        type: DataTypes.RANGE,
-        range: {
-          inclusive: [true,true]
       }
-
-    }
   });
 
     return Riders;
