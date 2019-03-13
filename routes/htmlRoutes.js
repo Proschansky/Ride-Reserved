@@ -5,9 +5,19 @@ const Sequelize = require('sequelize');
 
 module.exports = function(app) {
   // Load index page
-  app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../profile/main.html"));
-      });
+
+
+  app.get("/test", function(req, res){
+    db.Drivers.findAll({
+      where: {
+        languages: "french"
+      }
+    }).then(function(dbData){
+      console.log(dbData)
+      res.render("index", {dbData})
+    });
+  });
+
 
   app.get("/profile/profile", function(req, res) {
       res.sendFile(path.join(__dirname, "../profile/profile.html"));
