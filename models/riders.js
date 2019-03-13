@@ -31,10 +31,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       requestedStartDate: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATEONLY,
       },
       requestedEndDate: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATEONLY,
       }
   });
 
