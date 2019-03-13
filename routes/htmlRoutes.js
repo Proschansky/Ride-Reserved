@@ -1,10 +1,11 @@
 var db = require("../models");
 var path = require('path');
 var drivers = require('../models/drivers');
-const mysql = require("mysql");
+const Sequelize = require('sequelize');
 
 module.exports = function(app) {
   // Load index page
+
 
   app.get("/test", function(req, res){
     db.Drivers.findAll({
@@ -17,13 +18,10 @@ module.exports = function(app) {
     });
   });
 
+
   app.get("/profile/profile", function(req, res) {
       res.sendFile(path.join(__dirname, "../profile/profile.html"));
   });
-
-  app.get("/profile/main", function(req, res) {
-    res.sendFile(path.join(__dirname, "../profile/mainProfile.html"));
-});
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
@@ -40,13 +38,10 @@ module.exports = function(app) {
   });
 };
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "RideReserved",
-  password : ''
-});
-
+// const sequelize = new Sequelize('RideReserved', process.env.name, process.env.password, {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// });
 
 console.log(db.Drivers);
 
