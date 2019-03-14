@@ -27,9 +27,7 @@ var uiConfig = {
 
             var userSnap = firebase.database().ref('users/' + user.uid);
             userSnap.update({
-                username: user.displayName,
-                email: user.email,
-                profilePicture: user.photoURL
+                email: user.email
             });
             return true;
         },
@@ -53,6 +51,15 @@ var uiConfig = {
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+
+        // get the user ID from the auth system to start pulling user from database
+        userId = user.uid
+        console.log(userId);
+
+    }
+});
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
