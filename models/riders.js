@@ -35,6 +35,9 @@ module.exports = function(sequelize, DataTypes) {
       },
       requestedEndDate: {
         type: DataTypes.DATEONLY,
+      },
+      requestedLocation : {
+        type: DataTypes.STRING
       }
   });
 
