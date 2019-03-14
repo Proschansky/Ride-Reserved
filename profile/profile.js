@@ -1,3 +1,0 @@
-$('submit').on('click', function() {
-    
-})
