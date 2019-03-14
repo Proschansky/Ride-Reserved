@@ -1,4 +1,5 @@
 var db = require("../models");
+var path = require('path');
 
 module.exports = function(app) {
   // Get all examples
@@ -13,9 +14,10 @@ module.exports = function(app) {
   app.post("/api/riders", function(req, res) {
     console.log(req.body)
     db.Riders.create(req.body).then(function(data) {
-      console.log("working from post route");
-      res.json(data);
+     
+      res.json(data)
     });
+    // res.sendFile(path.join(__dirname, "../profile/main.html"));
   });
 
 

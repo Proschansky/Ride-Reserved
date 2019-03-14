@@ -23,7 +23,7 @@ $(".submit").on('click', function(event) {
             if (err) throw (err);
             console.log('ajax')
             console.log(data)
-        })
+        });
     }
     newRider();
 });
