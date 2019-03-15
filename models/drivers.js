@@ -43,6 +43,9 @@ module.exports = function(sequelize, DataTypes) {
       },
       currentLocation: {
         type: DataTypes.STRING
+      },
+      picture: {
+        type: DataTypes.STRING
       }
   });
   return Drivers;

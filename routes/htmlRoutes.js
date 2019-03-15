@@ -33,6 +33,6 @@ module.exports = function(app) {
 //   dialect: 'mysql'
 // });
 
-console.log(db.Drivers);
+// console.log(db.Drivers);
 
 
