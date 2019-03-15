@@ -32,6 +32,9 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,1000]
         }
       },
+      location: {
+        type: DataTypes.STRING
+      },
       requestedStartDate: {
         type: DataTypes.DATEONLY,
       },

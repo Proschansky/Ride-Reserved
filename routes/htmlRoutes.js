@@ -1,6 +1,5 @@
 var db = require("../models");
 var path = require('path');
-var drivers = require('../models/drivers');
 const Sequelize = require('sequelize');
 
 module.exports = function(app) {
@@ -8,14 +7,36 @@ module.exports = function(app) {
 
 
   app.get("/test", function(req, res){
+    
+    db.Riders.findOne({
+      where: {
+        id: 1
+      }
+    }).then(function(results){
+      msg = results.name
+      location = 
+      console.log(msg)
+      res.render("index", {msg})
+    })
+
     db.Drivers.findAll({
       where: {
-        languages: "french"
+        currentLocation: "Atlanta, GA"
       }
     }).then(function(dbData){
-      console.log(dbData)
+
       res.render("index", {dbData})
     });
+
+    db.Riders.findOne({
+      where: {
+        id: 1
+      }
+    }).then(function(results){
+      msg = results.name
+      console.log(msg)
+      res.render("index", {msg})
+    })
   });
 
 

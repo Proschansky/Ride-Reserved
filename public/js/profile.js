@@ -6,12 +6,14 @@ $(".submit").on('click', function(event) {
     var interests = $('.interests').val();
     var languages = $('.languages').val();
     var aboutMe = $('.aboutMe').val();
+    var location = $('.default').val();
 
     var me = {
         name: fullName,
         interests: interests[0],
         languages: languages[0],
         aboutMe: aboutMe,
+        location: location
     }
 
     function newRider(){
