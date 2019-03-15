@@ -6,7 +6,9 @@
 // const moment = MomentRange.extendMoment(Moment);
 
 module.exports = function(sequelize, DataTypes) {
+
     var Drivers = sequelize.define("Drivers", {
+
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
@@ -48,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
       }
   });
+
   return Drivers;
 };
  
-    
