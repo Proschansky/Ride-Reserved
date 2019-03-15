@@ -7,8 +7,8 @@ const Drivers = db.Drivers;
 // var env = process.env.NODE_ENV || "development";
 require('dotenv').config();
 
-var locations = ["New York City, NY", "Los Angeles, CA", "Chicago, IL", "Atlanta, GA", "Denver, CO", "Boston, MA", "Nashville, TN",
-    "Seattle, WA", "San Francisco, CA", "Boise, ID", "Twin Cities, MN", "Orlando, FL", "Hartford, CT", "Memphis, TN", "Dallas, TX", "Houston, TX", "Raleigh-Durham, NC", "Miami, FL", "St. Louis, MO", "Kansas City, MO/KS"];
+var locations = ["NYC", "LA", "DC", "CHI", "ATL", "DNV", "BOST", "NSH",
+    "SEA", "SF", "ORL", "DAL", "HOU", "MIA", "STL", "NO"];
 
 console.log(locations.length);
 

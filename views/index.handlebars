@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
+        <h1>Hello, {{msg}}</h1>
         <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
@@ -16,7 +16,7 @@
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
         <div>
-          <h3>Dummy Data Div</h3>
+          <h3>Drivers Available in Your Area</h3>
           {{#each dbData}}
             <ul>
               <li>{{this.name}}</li>
