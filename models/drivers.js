@@ -43,7 +43,9 @@ module.exports = function(sequelize, DataTypes) {
       availableEndDate: {
         type: DataTypes.DATEONLY,
       },
-      
+      currentLocation: {
+        type: DataTypes.STRING
+      }
   });
 
   return Drivers;
