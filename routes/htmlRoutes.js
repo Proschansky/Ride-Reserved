@@ -23,26 +23,22 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "../profile/profile.html"));
   });
 
-  // Load example page and pass in an example by id
-  // app.get("/example/:id", function(req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
+  app.get("/profile/main", function(req, res) {
+    res.sendFile(path.join(__dirname, "../profile/main.html"));
+});
+
+app.get("/profile/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "../profile/reserve.html"));
+});
+
+
+app.get("/profile/about", function(req, res) {
+  res.sendFile(path.join(__dirname, "../profile/about.html"));
+});
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
 };
-
-// const sequelize = new Sequelize('RideReserved', process.env.name, process.env.password, {
-//   host: 'localhost',
-//   dialect: 'mysql'
-// });
-
-
-
 
