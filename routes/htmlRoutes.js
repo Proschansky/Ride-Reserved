@@ -5,38 +5,30 @@ const Sequelize = require('sequelize');
 module.exports = function(app) {
   // Load index page
 
-
   app.get("/test", function(req, res){
+    
+    var msg;
+    var location;
     
     db.Riders.findOne({
       where: {
         id: 1
       }
     }).then(function(results){
-      msg = results.name
-      location = 
-      console.log(msg)
-      res.render("index", {msg})
+     
+      msg = results.name;
+      location = results.location;
+    
+      
+      db.Drivers.findAll({
+        where: {
+          currentLocation: location
+        }
+      }).then(function(dbData){
+        res.render("index", {dbData, msg} )
+      });
     })
 
-    db.Drivers.findAll({
-      where: {
-        currentLocation: "Atlanta, GA"
-      }
-    }).then(function(dbData){
-
-      res.render("index", {dbData})
-    });
-
-    db.Riders.findOne({
-      where: {
-        id: 1
-      }
-    }).then(function(results){
-      msg = results.name
-      console.log(msg)
-      res.render("index", {msg})
-    })
   });
 
 
