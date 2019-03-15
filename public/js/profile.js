@@ -26,4 +26,9 @@ $(".submit").on('click', function(event) {
         });
     }
     newRider();
+
+
+
+        window.location.href = "/profile/main";
+
 });
