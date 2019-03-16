@@ -15,16 +15,16 @@ module.exports = function(app) {
         id: 1
       }
     }).then(function(results){
-     
+      
       msg = results.name;
       location = results.location;
     
-      
       db.Drivers.findAll({
         where: {
           currentLocation: location
         }
       }).then(function(dbData){
+        console.log(dbData);
         res.render("index", {dbData, msg} )
       });
     })
