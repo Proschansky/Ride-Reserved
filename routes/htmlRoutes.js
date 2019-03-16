@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 module.exports = function(app) {
   // Load index page
 
-  app.get("/test", function(req, res){
+  app.get("/profile/main", function(req, res){
     
     var msg;
     var location;
@@ -38,9 +38,9 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "../profile/profile.html"));
   });
 
-  app.get("/profile/main", function(req, res) {
-    res.sendFile(path.join(__dirname, "../profile/main.html"));
-});
+//   app.get("/profile/main", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../profile/main.html"));
+// });
 
 app.get("/profile/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "../profile/reserve.html"));
