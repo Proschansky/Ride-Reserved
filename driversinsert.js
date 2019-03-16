@@ -83,6 +83,7 @@ function insertDrivers() {
                     languages: dummyDrivers[i].languages,
                     availableStartDate: dummyDrivers[i].availableStartDate,
                     availableEndDate: dummyDrivers[i].availableEndDate,
+                    currentLocation: "ATL"
                 }
             }).catch(function (err) {
                 console.log('Error: ', err)
